@@ -1,0 +1,40 @@
+﻿@model OrderApp.Models.Order
+
+<h2>Создать новый заказ</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label>Город отправителя</label>
+        <input asp-for="SenderCity" class="form-control" placeholder="Введите город (например, Москва)" />
+        <span asp-validation-for="SenderCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Адрес отправителя</label>
+        <input asp-for="SenderAddress" class="form-control" placeholder="Введите адрес (например, Ленина 10)" />
+        <span asp-validation-for="SenderAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Город получателя</label>
+        <input asp-for="RecipientCity" class="form-control" placeholder="Введите город (например, Санкт-Петербург)" />
+        <span asp-validation-for="RecipientCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Адрес получателя</label>
+        <input asp-for="RecipientAddress" class="form-control" placeholder="Введите адрес (например, Невский 10)" />
+        <span asp-validation-for="RecipientAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Вес груза</label>
+        <input asp-for="CargoWeight" class="form-control" placeholder="Введите вес (например, 12 кг или 500 г)" />
+        <span asp-validation-for="CargoWeight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Дата забора груза</label>
+        <input asp-for="PickupDate" class="form-control" type="date" />
+        <span asp-validation-for="PickupDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>
